@@ -33,6 +33,7 @@ func (b *GCPBotanist) GenerateCloudProviderConfig() (string, error) {
 
 	return `[Global]
 project-id="` + b.Project + `"
+local-zone="` + b.Shoot.Info.Spec.Cloud.GCP.Zones[0] + `"
 network-name="` + networkName + `"
 multizone=true
 token-url=nil
